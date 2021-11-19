@@ -1,0 +1,12 @@
+CREATE SCHEMA IF NOT EXISTS Bonsais;
+ALTER TABLE bonsais
+ALTER COLUMN acquisition_age INT(100);
+
+CREATE TABLE Bonsais(
+id UUID PRIMARY KEY NOT NULL,
+name VARCHAR(100),
+species VARCHAR(100),
+acquisition_date DATE,
+acquisition_age INT,
+status VARCHAR(30)
+);
