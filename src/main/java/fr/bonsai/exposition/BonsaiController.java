@@ -2,13 +2,11 @@ package fr.bonsai.exposition;
 
 import fr.bonsai.BonsaiMapper;
 import fr.bonsai.domain.BonsaiService;
-import fr.bonsai.infrastructure.BonsaiDao;
+import fr.bonsai.domain.model.Bonsai;
 import fr.bonsai.infrastructure.BonsaiEntity;
-import fr.bonsai.infrastructure.BonsaiService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -37,8 +35,24 @@ public class BonsaiController {
     }
 
     @PostMapping
-    public BonsaiEntity create (@RequestBody BonsaiEntity bonsai){
-        return (ResponseEntity<BonsaiDTO>) bonsaiService.create(bonsai);
+    public ResponseEntity<BonsaiDTO> create(@RequestBody BonsaiEntity bonsai){
+
+        Bonsai bonsaiTemp = bonsaiService.create(bonsai);
+
+        BonsaiDTO resultat = BonsaiMapper.BonsaiToDto(bonsaiTemp);
+
+        return ResponseEntity.created(null).body(resultat);
+
     }
 
+    @PatchMapping
+    public ResponseEntity<BonsaiDTO> patch(@RequestBody BonsaiEntity bonsai){
+
+        Bonsai bonsaiTemp = bonsaiService.create(bonsai);
+
+        BonsaiDTO resultat = BonsaiMapper.BonsaiToDto(bonsaiTemp);
+
+        return ResponseEntity.created(null).body(resultat);
+
+    }
 }

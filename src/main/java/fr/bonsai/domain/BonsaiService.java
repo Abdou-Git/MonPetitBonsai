@@ -27,7 +27,7 @@ public class BonsaiService {
     }
 
     @PostMapping
-    public BonsaiEntity create (@RequestBody BonsaiEntity bonsai){
+    public Bonsai create (@RequestBody BonsaiEntity bonsai){
         return bonsaiRepository.create(bonsai);
     }
 }

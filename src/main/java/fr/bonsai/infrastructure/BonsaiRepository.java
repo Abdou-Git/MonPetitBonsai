@@ -41,9 +41,10 @@ public class BonsaiRepository {
     }
 
     @PostMapping
-    public Bonsai create (@RequestBody Bonsai bonsai){
-        //return bonsaiDao.save(bonsai);
-        BonsaiEntity bonsaiEntity = bonsaiDao.save(bonsai);
+    public Bonsai create (@RequestBody BonsaiEntity bonsai){
+        BonsaiEntity res = bonsaiDao.save(bonsai);
+        Bonsai resultat = BonsaiMapper.EntityToBonsai(res);
+        return resultat;
 
     }
 

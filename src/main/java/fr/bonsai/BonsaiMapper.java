@@ -34,6 +34,8 @@ public class BonsaiMapper {
         return bonsaiConverted;
     }
 
+
+
     public static BonsaiDTO BonsaiToDto(Bonsai bonsai){
 
         BonsaiDTO bonsaiConverted = new BonsaiDTO();
