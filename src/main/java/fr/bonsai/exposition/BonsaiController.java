@@ -71,7 +71,7 @@ public class BonsaiController {
 
     @PutMapping("/{id}/status")
     public ResponseEntity<BonsaiDTO> updateStatus(@PathVariable UUID,@RequestBody String status){
-        
+
 
     }
 }
