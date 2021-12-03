@@ -30,13 +30,13 @@ public class BonsaiEntity {
     @Column(name = "status")
     private String status;
 
-    @OneToMany(targetEntity = WateringEntity.class)
+    @OneToMany(targetEntity = WateringEntity.class, mappedBy = "bonsai")
     private List<WateringEntity> wateringEntityList;
 
-    @OneToMany(targetEntity = RepottingEntity.class)
+    @OneToMany(targetEntity = RepottingEntity.class, mappedBy = "bonsai")
     private List<RepottingEntity> RepottingEntity;
 
-    @OneToMany(targetEntity = PruningEntity.class)
+    @OneToMany(targetEntity = PruningEntity.class,  mappedBy = "bonsai")
     private List<PruningEntity> PruningEntity;
 
 

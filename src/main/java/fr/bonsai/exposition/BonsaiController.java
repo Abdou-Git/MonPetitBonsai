@@ -68,4 +68,10 @@ public class BonsaiController {
     public ResponseEntity<BonsaiDTO> update(@PathVariable UUID id, @RequestBody BonsaiDTO updatedBonsai) {
         return bonsaiService.update(id, BonsaiMapper.DtoToBonsai(updatedBonsai)).map(bonsai -> ResponseEntity.ok(BonsaiMapper.BonsaiToDto(bonsai))).orElse(ResponseEntity.notFound().build());
     }
+
+    @PutMapping("/{id}/status")
+    public ResponseEntity<BonsaiDTO> updateStatus(@PathVariable UUID,@RequestBody String status){
+        
+
+    }
 }

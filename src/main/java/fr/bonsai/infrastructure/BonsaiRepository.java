@@ -32,7 +32,6 @@ public class BonsaiRepository {
         return collect;
     }
 
-    @GetMapping("/{uuid}")
     public Bonsai findById(@PathVariable("uuid") UUID uuid ) {
         Optional<fr.bonsai.infrastructure.common.BonsaiEntity> res = bonsaiDao.findById(uuid);
         if(res.isPresent()){
@@ -43,20 +42,17 @@ public class BonsaiRepository {
         }
     }
 
-    @DeleteMapping
     public void delete(UUID id) {
         bonsaiDao.deleteById(id);
 
     }
 
-    @PostMapping
     public Bonsai create (@RequestBody fr.bonsai.infrastructure.common.BonsaiEntity bonsai){
         fr.bonsai.infrastructure.common.BonsaiEntity res = bonsaiDao.save(bonsai);
         Bonsai resultat = BonsaiMapper.EntityToBonsai(res);
         return resultat;
     }
 
-    @PatchMapping
     public Bonsai update(Bonsai bonsai) {
         return BonsaiMapper.EntityToBonsai(bonsaiDao.save(BonsaiMapper.BonsaiToEntity(bonsai)));
 
