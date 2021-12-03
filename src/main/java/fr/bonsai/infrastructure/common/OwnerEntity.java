@@ -1,14 +1,12 @@
-package fr.bonsai.infrastructure;
+package fr.bonsai.infrastructure.common;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.util.UUID;
 
-@Entity(name = "bonasis")
-@Table(name = "bonsais")
-public class BonsaiEntity {
-
+@Entity(name = "owner")
+@Table(name = "owner")
+public class OwnerEntity {
 
     @Id
     @GeneratedValue(generator = "uuid2")
@@ -18,7 +16,7 @@ public class BonsaiEntity {
     @Column(name = "name")
     private String name;
 
-    public BonsaiEntity(){
+    public OwnerEntity() {
     }
 
     public UUID getId() {

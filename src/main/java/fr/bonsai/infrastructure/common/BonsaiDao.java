@@ -1,6 +1,6 @@
-package fr.bonsai.infrastructure;
+package fr.bonsai.infrastructure.common;
 
-import fr.bonsai.infrastructure.BonsaiEntity;
+import fr.bonsai.infrastructure.common.BonsaiEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.UUID;
